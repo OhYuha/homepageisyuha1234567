@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Music Player (500% Vol)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="player-container">
+        <!-- 앨범 아트 이미지 (원하는 이미지로 교체 가능) -->
+        <div class="album-art">
+            <div class="music-icon">🎵</div>
+        </div>
+
+        <div class="info">
+            <h2 id="title">노래 제목</h2>
+            <p id="artist">아티스트 이름</p>
+        </div>
+
+        <!-- 오디오 태그 (mp3 파일 이름을 music.mp3로 가정) -->
+        <audio id="main-audio" src="music.mp3"></audio>
+
+        <!-- 재생 컨트롤 -->
+        <div class="controls">
+            <button id="play-pause">Play</button>
+        </div>
+
+        <!-- 볼륨 컨트롤 (0 ~ 500%) -->
+        <div class="volume-container">
+            <span>Volume</span>
+            <input type="range" id="volume-slider" min="0" max="500" value="100">
+            <span id="volume-value">100%</span>
+        </div>
+        <p class="warning">※ 100% 이상은 음질 왜곡이 발생할 수 있습니다.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
