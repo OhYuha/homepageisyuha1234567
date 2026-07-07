@@ -1,0 +1,68 @@
+body {
+    background-color: #030303;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.player-container {
+    background-color: #1d1d1d;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.album-art {
+    width: 200px;
+    height: 200px;
+    background-color: #333;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+}
+
+.info h2 { margin: 10px 0 5px; font-size: 1.2rem; }
+.info p { color: #aaa; margin-bottom: 20px; }
+
+.controls button {
+    background-color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.volume-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 슬라이더 스타일 */
+input[type=range] {
+    width: 100%;
+    cursor: pointer;
+}
+
+#volume-value {
+    font-weight: bold;
+    color: #ff4b4b; /* 증폭 강조색 */
+}
+
+.warning {
+    font-size: 10px;
+    color: #666;
+    margin-top: 10px;
+}
