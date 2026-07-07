@@ -3,37 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나는나비 유하뮤직</title>
+    <title>My Music Player</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="player-container">
-        <!-- 앨범 아트 이미지 (원하는 이미지로 교체 가능) -->
+        <!-- 앨범 아트: image.png 파일이 있으니 그걸 사용합니다 -->
         <div class="album-art">
-            <div class="music-icon"><img src="./image.png"width="150"></div>
+            <img src="image.png" alt="Album Art" id="cover-img" width="150">
         </div>
 
         <div class="info">
-            <h2 id="title">나는 나비</h2>
-            <p id="artist">YB</p>
+            <h2 id="title">My Song</h2>
+            <p id="artist">Artist Name</p>
         </div>
 
-        <!-- 오디오 태그 (mp3 파일 이름을 music.mp3로 가정) -->
+        <!-- 스크린샷의 music.mp3 파일과 연결 -->
         <audio id="main-audio" src="music.mp3"></audio>
 
-        <!-- 재생 컨트롤 -->
         <div class="controls">
             <button id="play-pause">Play</button>
         </div>
 
-        <!-- 볼륨 컨트롤 (0 ~ 500%) -->
         <div class="volume-container">
-            <span>Volume</span>
+            <label>Volume (Max 500%)</label>
             <input type="range" id="volume-slider" min="0" max="500" value="100">
             <span id="volume-value">100%</span>
         </div>
-        <p class="warning">※ 100% 이상은 음질 왜곡이 발생할 수 있습니다.</p>
+        <p class="warning">※ 100% 이상 증폭 시 소리가 깨질 수 있습니다.</p>
     </div>
 
     <script src="script.js"></script>
