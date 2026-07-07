@@ -7,22 +7,21 @@ let audioContext;
 let gainNode;
 let source;
 
-// 오디오 초기화 함수 (사용자 상호작용 후 실행되어야 함)
+// 오디오 시스템 초기화 (클릭 시 실행)
 function initAudio() {
-    if (audioContext) return; // 이미 생성되었다면 중단
+    if (audioContext) return; 
 
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
     gainNode = audioContext.createGain();
     source = audioContext.createMediaElementSource(audio);
 
-    // 오디오 소스 -> 증폭 노드 -> 스피커 연결
     source.connect(gainNode);
     gainNode.connect(audioContext.destination);
 }
 
-// 재생/일시정지 버튼
+// 재생/일시정지 제어
 playPauseBtn.addEventListener('click', () => {
-    initAudio(); // 클릭 시 오디오 컨텍스트 활성화 (브라우저 정책)
+    initAudio(); 
 
     if (audio.paused) {
         audio.play();
@@ -33,13 +32,13 @@ playPauseBtn.addEventListener('click', () => {
     }
 });
 
-// 볼륨 슬라이더 조절
+// 볼륨 슬라이더 (0% ~ 500%)
 volumeSlider.addEventListener('input', (e) => {
     const value = e.target.value;
     volumeValue.innerText = value + "%";
 
     if (gainNode) {
-        // 100%가 1.0이므로 500%는 5.0으로 변환
+        // 100%를 1로 계산하여 500%일 때 5배 증폭
         const gain = value / 100;
         gainNode.gain.setValueAtTime(gain, audioContext.currentTime);
     }
